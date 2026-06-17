@@ -3,7 +3,6 @@
 <head>
 <title>FUPRE Portal</title>
 
-<!-- MOBILE RESPONSIVE FIX -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -52,7 +51,7 @@ body{
 }
 
 .hero h1{
-    font-size:32px;
+    font-size:30px;
     color:#fbbf24;
     margin-bottom:10px;
 }
@@ -62,15 +61,20 @@ body{
     margin:auto;
     line-height:1.6;
     color:#e5e7eb;
-    padding:0 10px;
 }
 
-/* IMAGE */
-.marquee img{
+/* SLIDESHOW */
+.slideshow-container{
+    max-width:700px;
+    margin:30px auto;
+    position:relative;
+}
+
+.slide{
     width:100%;
-    max-width:500px;
     border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    display:none;
 }
 
 /* FORM */
@@ -106,7 +110,7 @@ input[type="submit"]:hover{
     background:#16a34a;
 }
 
-/* SECTIONS */
+/* CARDS */
 .section{
     text-align:center;
     padding:30px 15px;
@@ -114,8 +118,8 @@ input[type="submit"]:hover{
 
 .card-container{
     display:flex;
-    justify-content:center;
     flex-wrap:wrap;
+    justify-content:center;
     gap:15px;
     margin-top:20px;
 }
@@ -129,12 +133,6 @@ input[type="submit"]:hover{
 
 .card h3{
     color:#38bdf8;
-    margin-bottom:10px;
-}
-
-/* AUDIO */
-audio{
-    margin-top:20px;
 }
 
 /* FOOTER */
@@ -146,18 +144,8 @@ footer{
     color:#94a3b8;
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .hero h1{
-        font-size:24px;
-    }
-
     .card-container{
         flex-direction:column;
         align-items:center;
@@ -166,7 +154,6 @@ footer{
     .card{
         width:90%;
     }
-
 }
 
 </style>
@@ -190,22 +177,17 @@ footer{
 <div class="hero">
     <h1>Welcome to FUPRE Portal</h1>
     <p>
-        Federal University of Petroleum Resources, Effurun is Nigeria’s premier petroleum university,
-        providing excellence in education, research, and innovation.
+        Federal University of Petroleum Resources, Effurun — excellence in education, research and innovation.
     </p>
 </div>
 
-<!-- IMAGE -->
-<center class="marquee">
-    <img src="FUPRE-Friendly-Env-1.jpg">
-</center>
+<!-- SLIDESHOW -->
+<div class="slideshow-container">
 
-<!-- AUDIO -->
-<center>
-<audio controls>
-    <source src="Terrian_-_Big_God_CeeNaija.com_.mp3">
-</audio>
-</center>
+    <img class="slide" src="College_of_Science_Federal_University_of_Petroluem_Resources_Effurun.jpg">
+    <img class="slide" src="img_bg_7-1.jpg">
+
+</div>
 
 <!-- LOGIN -->
 <form>
@@ -220,7 +202,7 @@ footer{
     <input type="submit" value="Login">
 </form>
 
-<!-- ABOUT SECTION -->
+<!-- INFO -->
 <div class="section">
     <h2 style="color:#fbbf24;">Why Choose FUPRE?</h2>
 
@@ -228,17 +210,17 @@ footer{
 
         <div class="card">
             <h3>Quality Education</h3>
-            <p>Top academic programs with experienced lecturers.</p>
+            <p>Top lecturers and strong academic programs.</p>
         </div>
 
         <div class="card">
             <h3>Modern Facilities</h3>
-            <p>Advanced labs and learning environments.</p>
+            <p>Well equipped labs and learning environment.</p>
         </div>
 
         <div class="card">
-            <h3>Career Opportunities</h3>
-            <p>Strong industry connections and internships.</p>
+            <h3>Career Growth</h3>
+            <p>Industry connections and opportunities.</p>
         </div>
 
     </div>
@@ -246,8 +228,32 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-    © 2026 Federal University of Petroleum Resources, Effurun
+    © 2026 FUPRE Portal
 </footer>
+
+<!-- SLIDESHOW SCRIPT -->
+<script>
+let index = 0;
+showSlides();
+
+function showSlides(){
+    let slides = document.getElementsByClassName("slide");
+
+    for(let i=0; i<slides.length; i++){
+        slides[i].style.display = "none";
+    }
+
+    index++;
+
+    if(index > slides.length){
+        index = 1;
+    }
+
+    slides[index-1].style.display = "block";
+
+    setTimeout(showSlides, 3000);
+}
+</script>
 
 </body>
 </html>
