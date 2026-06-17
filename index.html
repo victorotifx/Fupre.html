@@ -3,7 +3,12 @@
 <head>
 <title>FUPRE Portal</title>
 
+<!-- MOBILE RESPONSIVE FIX -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -22,9 +27,8 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 30px;
-    position:sticky;
-    top:0;
+    padding:15px 20px;
+    flex-wrap:wrap;
 }
 
 .navbar h2{
@@ -33,7 +37,7 @@ body{
 
 .navbar a{
     color:white;
-    margin:0 10px;
+    margin:5px 10px;
     text-decoration:none;
 }
 
@@ -44,26 +48,27 @@ body{
 /* HERO */
 .hero{
     text-align:center;
-    padding:60px 20px;
+    padding:40px 15px;
 }
 
 .hero h1{
-    font-size:40px;
+    font-size:32px;
     color:#fbbf24;
     margin-bottom:10px;
 }
 
 .hero p{
-    max-width:800px;
+    max-width:900px;
     margin:auto;
-    color:#e5e7eb;
     line-height:1.6;
+    color:#e5e7eb;
+    padding:0 10px;
 }
 
 /* IMAGE */
 .marquee img{
-    width:500px;
-    max-width:100%;
+    width:100%;
+    max-width:500px;
     border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
@@ -72,10 +77,10 @@ body{
 form{
     background:#1e293b;
     max-width:400px;
+    width:90%;
     margin:30px auto;
-    padding:25px;
+    padding:20px;
     border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 input[type="email"],
@@ -88,13 +93,13 @@ input[type="password"]{
 }
 
 input[type="submit"]{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
     background:#22c55e;
     color:white;
-    border:none;
-    padding:12px;
-    border-radius:8px;
     cursor:pointer;
-    width:100%;
 }
 
 input[type="submit"]:hover{
@@ -103,17 +108,15 @@ input[type="submit"]:hover{
 
 /* SECTIONS */
 .section{
-    max-width:1000px;
-    margin:40px auto;
-    padding:20px;
     text-align:center;
+    padding:30px 15px;
 }
 
 .card-container{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    flex-wrap:wrap;
+    gap:15px;
     margin-top:20px;
 }
 
@@ -122,7 +125,6 @@ input[type="submit"]:hover{
     padding:20px;
     border-radius:12px;
     width:280px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 .card h3{
@@ -130,14 +132,9 @@ input[type="submit"]:hover{
     margin-bottom:10px;
 }
 
-/* LINKS */
-a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-a:hover{
-    color:#fbbf24;
+/* AUDIO */
+audio{
+    margin-top:20px;
 }
 
 /* FOOTER */
@@ -148,6 +145,30 @@ footer{
     margin-top:40px;
     color:#94a3b8;
 }
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .card-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+    }
+
+}
+
 </style>
 
 </head>
@@ -170,14 +191,14 @@ footer{
     <h1>Welcome to FUPRE Portal</h1>
     <p>
         Federal University of Petroleum Resources, Effurun is Nigeria’s premier petroleum university,
-        dedicated to academic excellence, innovation, and research in energy and engineering fields.
+        providing excellence in education, research, and innovation.
     </p>
 </div>
 
 <!-- IMAGE -->
-<marquee class="marquee">
+<center class="marquee">
     <img src="FUPRE-Friendly-Env-1.jpg">
-</marquee>
+</center>
 
 <!-- AUDIO -->
 <center>
@@ -186,9 +207,9 @@ footer{
 </audio>
 </center>
 
-<!-- LOGIN FORM -->
+<!-- LOGIN -->
 <form>
-    <h3 style="text-align:center; color:#fbbf24;">Student Login</h3>
+    <h3 style="text-align:center;color:#fbbf24;">Student Login</h3>
 
     Email:
     <input type="email">
@@ -199,25 +220,25 @@ footer{
     <input type="submit" value="Login">
 </form>
 
-<!-- INFO CARDS -->
+<!-- ABOUT SECTION -->
 <div class="section">
-    <h2>Why Choose FUPRE?</h2>
+    <h2 style="color:#fbbf24;">Why Choose FUPRE?</h2>
 
     <div class="card-container">
 
         <div class="card">
             <h3>Quality Education</h3>
-            <p>Top-level academic programs and experienced lecturers.</p>
+            <p>Top academic programs with experienced lecturers.</p>
         </div>
 
         <div class="card">
-            <h3>Modern Labs</h3>
-            <p>Advanced laboratories for engineering and science students.</p>
+            <h3>Modern Facilities</h3>
+            <p>Advanced labs and learning environments.</p>
         </div>
 
         <div class="card">
-            <h3>Career Growth</h3>
-            <p>Strong industry connections and internship opportunities.</p>
+            <h3>Career Opportunities</h3>
+            <p>Strong industry connections and internships.</p>
         </div>
 
     </div>
